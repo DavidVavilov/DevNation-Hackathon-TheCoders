@@ -18,11 +18,8 @@ def home():
       list=item.values()
       for i in list:
          cords_list.append(i)
-   
+
    return str(cords_list)
-
-
-
 
 @app.route('/help/<cord>') #Posts a new active cord, Example - http://127.0.0.1:5000/help/thisIsATest
 def help(cord):
@@ -38,7 +35,7 @@ def delete(cord):
       if(dictToDelete == dic):
          keyToDelete = key
 
-   dataBase.delete('/cords',key)
+   dataBase.delete('/cords',keyToDelete)
    return ""
 
 #http://127.0.0.1:5000/delete/thisIsATest
@@ -46,4 +43,5 @@ def delete(cord):
 
 if __name__ == "__main__":
    app.run() #Runs the web app
+
 
