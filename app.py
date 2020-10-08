@@ -19,8 +19,7 @@ def home():
       for i in list:
          cords_list.append(i)
    
-   print(cords_list)
-   return ""
+   return str(cords_list)
 
 
 
