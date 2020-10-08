@@ -12,14 +12,16 @@ def getCords(): #Gets all the active Cords from the DB
 @app.route('/') #Gets all the active Cords
 def home():
    cords = getCords()
-   cords_list=[]
-   newlist=cords.values()
-   for item in newlist:
-      list=item.values()
-      for i in list:
-         cords_list.append(i)
-
-   return str(cords_list)
+   if(cords == ""):
+      return "None"
+   else:
+      cords_list=[]
+      newlist=cords.values()
+      for item in newlist:
+         list=item.values()
+         for i in list:
+            cords_list.append(i)
+      return str(cords_list)
 
 @app.route('/help/<cord>') #Posts a new active cord, Example - http://127.0.0.1:5000/help/thisIsATest
 def help(cord):
